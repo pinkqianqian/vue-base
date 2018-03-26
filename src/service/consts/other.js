@@ -4,7 +4,7 @@ export default [{
         id: 1,
         parentId: 0,
         label: 'page1',
-        route: '/page1',
+        route: '/cms/page1',
         show: true,
         order: 1,
         icon: 'arrow-graph-up-right',
@@ -13,7 +13,7 @@ export default [{
         parentId: 1,
         order: 1,
         label: 'page1.1',
-        route: '/page1/page1.1',
+        route: '/cms/page1/page1.1',
         show: true,
         icon: 'ios-flower'
     }, {
@@ -21,7 +21,7 @@ export default [{
         parentId: 0,
         order: 1,
         label: 'page2',
-        route: '/page2',
+        route: '/cms/page2',
         show: true,
         icon: 'ios-briefcase'
     }]

@@ -5,11 +5,13 @@ Vue.use(Router);
 
 
 import home from './home';
+import cms from './cms';
 import error from './error';
 
 const router = new Router({
     routes: [
         ...home,
+        ...cms,
         ...error
     ]
 });
