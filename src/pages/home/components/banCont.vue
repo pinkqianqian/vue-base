@@ -1,5 +1,5 @@
 <template>
-    <div class="bangker-bannerContent">
+    <div class="bangker-bannerContent" id="sr2">
         <div>
             <p class="p1">Bangker Travel</p>
             <p class="p2">在线旅行革命性创新</p>

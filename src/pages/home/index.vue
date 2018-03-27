@@ -1,9 +1,10 @@
 <template>
     <div class="bangker bangker-home">
-        <div class="header">
-            <bangker-nav></bangker-nav>
-            <banner-content></banner-content>
-        </div>
+        <bangker-nav ref="nav"></bangker-nav>
+        <!-- <div class="header"> -->
+        <banner-content></banner-content>
+        <div id="sr1"></div>
+        <!-- </div> -->
         <service></service>
         <product-data></product-data>
         <team></team>
@@ -32,6 +33,16 @@
             Partner,
             ProductPlan,
             ContactUs
+        },
+        mounted() {
+            // window.controller = new ScrollMagic.Controller()
+            // let $nav = this.$refs.nav
+
+            // new ScrollMagic.Scene({ triggerElement: '#sr1', duration: 400 })
+            //     .setPin(`#nav`)
+            //     .setTween('#nav', { backgroundColor: '#fff', position: 'fixed' })
+            //     .addTo(controller)
         }
     }
+
 </script>
