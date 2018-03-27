@@ -2,9 +2,6 @@
 @font-face {
     font-family: 'Oswald Light';
     src: url('Assets/fonts/os.ttf') format('truetype');
-    // <source>[<format>]]*;
-    // [font-weight: <weight>];
-    // [font-style: <style>];
 }
 
 .bangker-home {
@@ -14,69 +11,79 @@
     background: #fff;
     font-family: '微软雅黑';
     // font-family: 'PingFang SC';
+
     .bangker-nav {
-        position: relative;
+        width: 100%;
+        min-width: 1000px;
         height: 86px;
-        padding: 20px 50px;
+        padding: 20px 0;
         display: flex;
         display: -webkit-flex;
         flex-direction: row;
-        width: 100%;
-
+        justify-content: center;
         position: fixed;
-        .logo {
-            flex: 1;
-            div {
-                width: 229px;
-                height: 42px;
-                background: url('Assets/image/home/logo_01.png') no-repeat;
-            }
-        }
-        .navRight {
-            min-width: 566px;
+        top: 0;
+        left: 0;
+        .navContent {
+            width: 95%;
+            min-width: 1000px;
             display: flex;
             display: -webkit-flex;
             flex-direction: row;
-            .item {
-                max-width: 460px;
-                font-size: 16px;
-                line-height: 45px;
-                flex: 2;
+            .logo {
+                flex: 1;
+                div {
+                    width: 229px;
+                    height: 42px;
+                    background: url('Assets/image/home/logo_01.png') no-repeat;
+                }
+            }
+            .navRight {
+                min-width: 566px;
                 display: flex;
                 display: -webkit-flex;
                 flex-direction: row;
-                justify-content: space-around;
-                span {
-                    font-weight: bolder;
-                    text-align: center;
-                    a {
-                        color: #fff;
+                .item {
+                    max-width: 460px;
+                    font-size: 16px;
+                    line-height: 45px;
+                    flex: 2;
+                    display: flex;
+                    display: -webkit-flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    span {
+                        font-weight: bolder;
+                        text-align: center;
+                        a {
+                            color: #fff;
+                        }
                     }
                 }
-            }
-            .language {
-                flex: 1;
-                max-width: 127px;
-                height: 40px;
-                margin-left: 20px;
-                padding: 0 15px 0 27px;
-                font-size: 16px;
-                border-radius: 3px;
-                background: #fff;
-                cursor: pointer;
-                p {
-                    line-height: 40px;
-                    color: #000;
-                    background: url('Assets/image/home/arr_01.png') no-repeat right center;
-                    background-size: 15px 10px;
-                }
-                ul.language-item {
-                    // display: none;
+                .language {
+                    flex: 1;
+                    max-width: 127px;
+                    height: 40px;
+                    margin-left: 20px;
+                    padding: 0 15px 0 27px;
+                    font-size: 16px;
+                    border-radius: 3px;
                     background: #fff;
-                    list-style: none;
-                    margin: 10px 0 0 5px;
-                    li {
-                        line-height: 30px;
+                    cursor: pointer;
+                    p {
+                        line-height: 40px;
+                        color: #000;
+                        background: url('Assets/image/home/arr_01.png') no-repeat right center;
+                        background-size: 15px 10px;
+                    }
+                    ul.language-item {
+                        // display: none;
+                        background: #fff;
+                        list-style: none;
+                        margin: 10px 0 0 5px;
+                        li {
+                            line-height: 30px;
+                        }
                     }
                 }
             }
@@ -86,23 +93,26 @@
         background: #fff;
         box-shadow: 0 1px 5px #888;
         z-index: 1;
-        .logo div {
-            background: url('Assets/image/home/logo_02.png') no-repeat;
-        }
-        .navRight {
-            .item span a {
-                color: #333;
+        .navContent {
+            .logo div {
+                background: url('Assets/image/home/logo_02.png') no-repeat;
             }
-            .item span.current a {
-                color: #8527fa;
-            }
-            .language {
-                background: #f5f6f9;
+            .navRight {
+                .item span a {
+                    color: #333;
+                }
+                .item span.current a {
+                    color: #8527fa;
+                }
+                .language {
+                    background: #f5f6f9;
+                }
             }
         }
     }
     .bangker-bannerContent {
         width: 100%;
+        min-width: 1000px;
         height: 639px;
         display: flex;
         display: -webkit-flex;
@@ -110,7 +120,7 @@
         justify-content: center;
         padding-top: 86px;
         background: url('Assets/image/home/banner.png') no-repeat;
-        background-size: 100%;
+        background-size: 100% 639px;
         div {
             width: 1000px;
             padding-top: 80px;
