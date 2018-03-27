@@ -1,11 +1,10 @@
 <template>
     <div class="bangker bangker-home">
-        <bangker-nav ref="nav"></bangker-nav>
+        <bangker-nav id="nav"></bangker-nav>
         <!-- <div class="header"> -->
-        <banner-content></banner-content>
-        <div id="sr1"></div>
+        <banner-content id="content"></banner-content>
         <!-- </div> -->
-        <service></service>
+        <service id="service"></service>
         <product-data></product-data>
         <team></team>
         <partner></partner>
@@ -34,14 +33,8 @@
             ProductPlan,
             ContactUs
         },
-        mounted() {
-            // window.controller = new ScrollMagic.Controller()
-            // let $nav = this.$refs.nav
-
-            // new ScrollMagic.Scene({ triggerElement: '#sr1', duration: 400 })
-            //     .setPin(`#nav`)
-            //     .setTween('#nav', { backgroundColor: '#fff', position: 'fixed' })
-            //     .addTo(controller)
+        created() {
+            window.controller = new ScrollMagic.Controller()
         }
     }
 

@@ -1,5 +1,7 @@
 <template>
-    <div class="bangker-nav" id="nav">
+<!--<div>-->
+        <!--<div id="test" style="width: 100%;height:100px;background:red;">test</div>-->
+    <div class="bangker-nav">
         <div class="navContent">
             <div class="logo">
                 <div></div>
@@ -16,16 +18,17 @@
                     <div @click="showLanguage">
                         <p>简体中文</p>
                     </div>
-                    <ul class="language-item">
-                        <li>简体中文</li>
+                    <ul class="language-item" :class="{ 'disB': languageIsShow, 'disN': !languageIsShow  }">
+                    <!-- <ul class="language-item {{ languageIsShow ? 'disB' : 'disNo' }}"> -->
                         <li>English</li>
-                        <li>日本语</li>
+                        <li class="currentLag">日本語</li>
                         <li>한국어.</li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
+    <!--</div>-->
 </template>
 
 <script>
@@ -42,40 +45,15 @@
             }
         },
         mounted() {
-            window.controller = new ScrollMagic.Controller()
             let $nav = this.$refs
 
-            new ScrollMagic.Scene({ triggerElement: '#sr1', duration: 400, offset: -50})
-                .setPin('#nav')
-                .setTween('#nav', { backgroundColor: '#8527fa', position: 'fixed', boxShadow: "0 1px 1px grey", })
+            let scene = new ScrollMagic.Scene({ triggerElement: '#service', duration: 725, offset: -200})
+                .setTween('#nav', { backgroundColor: '#8527fa' })
                 .addTo(controller)
 
-
-
-        //     box - shadow: 0 1px 5px #888;
-        //     z - index: 1;
-        // .logo div {
-        //         background: url('Assets/image/home/logo_02.png') no - repeat;
-        //     }
-        // .navRight {
-        //     .item span a {
-        //             color: #333;
-        //         }
-        //     .item span.current a {
-        //             color: #8527fa;
-        //         }
-        //     .language {
-        //             background: #f5f6f9;
-        //         }
-        //     }
+                new ScrollMagic.Scene({ triggerElement: '#productData', duration: 30, offset: -200})
+                .setTween('#nav', { boxShadow: "0 1px 5px black" })
+                .addTo(controller)
         }
     }
 </script>
-<style>
-    .box1 {
-        width: 100%;
-        height: 200px;
-        background: transparent;
-        /*opacity: 0;*/
-    }
-</style>

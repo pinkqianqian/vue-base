@@ -22,8 +22,10 @@
         flex-direction: row;
         justify-content: center;
         position: fixed;
-        top: 0;
-        left: 0;
+        z-index: 2;
+        // top: 0;
+        // left: 0;
+        // transition: all .5 ease;
         .navContent {
             width: 95%;
             min-width: 1000px;
@@ -69,9 +71,11 @@
                     padding: 0 15px 0 27px;
                     font-size: 16px;
                     cursor: pointer;
-                    background: #fff;
-                    border-top-left-radius: 3px;
-                    border-top-right-radius: 3px;
+                    background: #f5f6f9;
+
+                    border-radius: 3px;
+                    // border-top-left-radius: 3px;
+                    // border-top-right-radius: 3px;
                     p {
                         line-height: 40px;
                         color: #000;
@@ -80,11 +84,12 @@
                     }
                     ul.language-item {
                         position: absolute;
-                        top: 40px;
+                        top: 38px;
                         left: 0;
                         width: 100%;
-                        // padding: 10px 0 0 0;
-                        background: #fff;
+                        padding-top: 8px;
+                        background: #f5f6f9;
+
                         border-bottom-left-radius: 3px;
                         border-bottom-right-radius: 3px;
                         list-style: none;
@@ -94,6 +99,10 @@
                             font-size: 16px;
                             font-family: 'PingFang SC';
                             margin: 0 0 15px 0;
+                        }
+                        li:hover,
+                        li.currentLag {
+                            color: #8527fa;
                         }
                     }
                 }
@@ -130,8 +139,9 @@
         flex-direction: row;
         justify-content: center;
         padding-top: 86px;
-        background: url('Assets/image/home/banner.png') no-repeat;
-        background-size: 100% 639px;
+        background: #8427fa url('Assets/image/home/banner.png') no-repeat bottom;
+        background-size: cover;
+        background-origin: content-box;
         div {
             width: 1000px;
             padding-top: 80px;
@@ -185,7 +195,153 @@
             justify-content: space-around;
             .serviceAnimation {
                 flex: 0.85;
-                background: url('Assets/image/home/img_02.png') no-repeat;
+                background: url('Assets/image/home/yzt-bg.png') no-repeat;
+                position: relative;
+                .animation-one {
+                    position: absolute;
+                    left: 303px;
+                    bottom: 240px;
+                    width: 66px;
+                    height: auto;
+                    .animation-oneHeader {
+                        width: 66px;
+                        height: 36px;
+                        background: url('Assets/image/home/yzt_004_H.png') no-repeat top center;
+                    }
+                    .animation-oneBody {
+                        width: 66px; // height: 0;
+                        // height: 19px;
+                        height: 0;
+
+                        background: url('Assets/image/home/yzt_004_C.png') no-repeat center;
+                        background-size: 66px 100%;
+                    }
+                    .animation-oneFooter {
+                        width: 66px;
+                        height: 21px;
+                        background: url('Assets/image/home/yzt_004_F.png') no-repeat bottom center;
+                    }
+                }
+                .animation-two {
+                    position: absolute;
+                    left: 140px;
+                    bottom: 161px;
+                    width: 92px;
+                    height: auto;
+                    .animation-twoHeader {
+                        width: 92px;
+                        height: 50px;
+                        background: url('Assets/image/home/yzt_006_H.png') no-repeat top center;
+                    }
+                    .animation-twoBody {
+                        width: 92px; // height: 0;
+                        // height: 116px;
+                        height: 0;
+
+                        background: url('Assets/image/home/yzt_006_C.png') no-repeat center;
+                        background-size: 92px 100%;
+                    }
+                    .animation-twoFooter {
+                        width: 92px;
+                        height: 29px;
+                        background: url('Assets/image/home/yzt_006_F.png') no-repeat bottom center;
+                    }
+                }
+                .animation-three {
+                    position: absolute;
+                    left: 242px;
+                    bottom: 151px;
+                    width: 84px;
+                    height: auto;
+                    .animation-threeHeader {
+                        width: 84px;
+                        height: 45px;
+                        background: url('Assets/image/home/yzt_005_H.png') no-repeat top center;
+                    }
+                    .animation-threeBody {
+                        width: 84px; // height: 0;
+                        height: 0;
+
+                        background: url('Assets/image/home/yzt_005_C.png') no-repeat center;
+                        background-size: 84px 100%;
+                    }
+                    .animation-threeFooter {
+                        width: 84px;
+                        height: 26px;
+                        background: url('Assets/image/home/yzt_005_F.png') no-repeat bottom center;
+                    }
+                }
+                .animation-four {
+                    position: absolute;
+                    left: 0;
+                    bottom: 97px;
+                    width: 80px;
+                    height: auto;
+                    .animation-fourHeader {
+                        width: 80px;
+                        height: 43px;
+                        background: url('Assets/image/home/yzt_001_H.png') no-repeat top center;
+                    }
+                    .animation-fourBody {
+                        width: 80px;
+                        height: 0;
+                        // height: 23px;
+                        background: url('Assets/image/home/yzt_001_C.png') no-repeat center;
+                        background-size: 80px 100%;
+                    }
+                    .animation-fourFooter {
+                        width: 80px;
+                        height: 25px;
+                        background: url('Assets/image/home/yzt_001_F.png') no-repeat bottom center;
+                    }
+                }
+                .animation-five {
+                    position: absolute;
+                    left: 95px;
+                    bottom: 82px;
+                    width: 110px;
+                    height: auto;
+                    .animation-fiveHeader {
+                        width: 110px;
+                        height: 59px;
+                        background: url('Assets/image/home/yzt_002_H.png') no-repeat top center;
+                    }
+                    .animation-fiveBody {
+                        width: 110px;
+                        height: 0;
+                        // height: 67px;
+                        background: url('Assets/image/home/yzt_002_C.png') no-repeat center;
+                        background-size: 110px 100%;
+                    }
+                    .animation-fiveFooter {
+                        width: 110px;
+                        height: 34px;
+                        background: url('Assets/image/home/yzt_002_F.png') no-repeat bottom center;
+                    }
+                }
+                .animation-six {
+                    position: absolute;
+                    left: 242px;
+                    bottom: 49px;
+                    width: 110px;
+                    height: auto;
+                    .animation-sixHeader {
+                        width: 110px;
+                        height: 59px;
+                        background: url('Assets/image/home/yzt_003_H.png') no-repeat top center;
+                    }
+                    .animation-sixBody {
+                        width: 110px;
+                        height: 0;
+                        background: url('Assets/image/home/yzt_003_C.png') no-repeat center;
+                        background-size: 110px 100%;
+                    }
+                    .animation-sixFooter {
+                        width: 110px;
+                        height: 34px;
+                        background: url('Assets/image/home/yzt_003_F.png') no-repeat bottom center;
+                    }
+                }
             }
             .serviceExplain {
                 flex: 1.15;
@@ -323,6 +479,13 @@
                 .item {
                     flex: 1;
                     font-size: 18px;
+                    img:hover {
+                        transform: scale(1.05);
+                        // transform: rotate(360deg);
+                    }
+                    img {
+                        transition: all .2s ease-in;
+                    }
                     p.teamName {
                         color: #333;
                     }
@@ -367,6 +530,13 @@
                 img {
                     width: 189px;
                     margin-bottom: 20px;
+                    transition: all .5s ease;
+                }
+                img:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 5px #888;
+                    border-radius: 9px;
+                    cursor: pointer;
                 }
             }
         }
@@ -415,6 +585,7 @@
                         flex-direction: row;
                         justify-content: space-around;
                         .itemContent {
+                        opacity: 0;
                             width: 460px;
                             padding: 20px 25px;
                             margin: 25px 0;
