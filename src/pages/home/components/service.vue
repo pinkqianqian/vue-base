@@ -57,29 +57,29 @@
             }
         },
         mounted() {
-            new ScrollMagic.Scene({ triggerElement: "#productData" })
+            new ScrollMagic.Scene({ triggerElement: "#service", offset:100 })
                 .setTween(this.makeTween('#box1', 19))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData" })
+            new ScrollMagic.Scene({ triggerElement: "#service", offset:100 })
                 .setTween(this.makeTween('#box2', 116))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData" })
+            new ScrollMagic.Scene({ triggerElement: "#service", offset:100 })
                 .setTween(this.makeTween('#box3', 68))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData" })
+            new ScrollMagic.Scene({ triggerElement: "#service", offset:100 })
                 .setTween(this.makeTween('#box4', 23))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData" })
+            new ScrollMagic.Scene({ triggerElement: "#service", offset:100 })
                 .setTween(this.makeTween('#box5', 67))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData" })
+            new ScrollMagic.Scene({ triggerElement: "#service", offset:100 })
                 .setTween(this.makeTween('#box6', 32))
                 .addTo(controller);
 
         },
         methods: {
             makeTween(target, height) {
-                TweenMax.to(target, height/24, {
+                return TweenMax.to(target, height/24, {
                     height: `${height}px`,
                     // ease: 'easeOutBounce'
                     ease: 'easeIn'
