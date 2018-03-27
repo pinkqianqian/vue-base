@@ -1,5 +1,5 @@
 <template>
-    <div class="bangker-bannerContent" id="sr2">
+    <div class="bangker-bannerContent">
         <div>
             <p class="p1">Bangker Travel</p>
             <p class="p2">在线旅行革命性创新</p>
@@ -10,5 +10,8 @@
         </div>
     </div>
 </template>
-
-
+<script>
+    export default {
+    
+    }
+</script>

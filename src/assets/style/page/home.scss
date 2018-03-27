@@ -22,8 +22,10 @@
         flex-direction: row;
         justify-content: center;
         position: fixed;
-        top: 0;
-        left: 0;
+        z-index: 1;
+        // top: 0;
+        // left: 0;
+        // transition: all .5 ease;
         .navContent {
             width: 95%;
             min-width: 1000px;
@@ -119,8 +121,9 @@
         flex-direction: row;
         justify-content: center;
         padding-top: 86px;
-        background: url('Assets/image/home/banner.png') no-repeat;
-        background-size: 100% 639px;
+        background: #8427fa url(/static/img/banner.33aac67.png) no-repeat bottom;
+        background-size: cover;
+        background-origin: content-box;
         div {
             width: 1000px;
             padding-top: 80px;
@@ -312,6 +315,13 @@
                 .item {
                     flex: 1;
                     font-size: 18px;
+                    img:hover {
+                        transform: scale(1.05);
+                        // transform: rotate(360deg);
+                    }
+                    img {
+                        transition: all .2s ease-in;
+                    }
                     p.teamName {
                         color: #333;
                     }
@@ -356,6 +366,13 @@
                 img {
                     width: 189px;
                     margin-bottom: 20px;
+                    transition: all .5s ease;
+                }
+                img:hover {
+                    transform: scale(1.05);
+                    box-shadow: 0 0 5px #888;
+                    border-radius: 9px;
+                    cursor: pointer;
                 }
             }
         }
@@ -404,6 +421,7 @@
                         flex-direction: row;
                         justify-content: space-around;
                         .itemContent {
+                        opacity: 0;
                             width: 460px;
                             padding: 20px 25px;
                             margin: 25px 0;

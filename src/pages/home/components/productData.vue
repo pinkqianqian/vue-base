@@ -1,5 +1,5 @@
 <template>
-    <div class="bangker-productData">
+    <div class="bangker-productData" id="productData">
         <div class="dataContent">
             <div class="dataContent-left">
                 <h3>巨人的肩膀上开始新征程</h3>
@@ -8,7 +8,7 @@
                 <div class="dataStream">
                     <div class="dataItem">
                         <div class="dataText">
-                            <span class="dataNum">100</span>
+                            <span class="dataNum">{{dataOne}}</span>
                             <span class="dataSymbol">
                                 <span class="dataSymbolOne">＋</span>
                                 <span class="dataSymbolTwo">w</span>
@@ -18,7 +18,7 @@
                     </div>
                     <div class="dataItem">
                         <div class="dataText">
-                            <span class="dataNum">230</span>
+                            <span class="dataNum">{{dataTwo}}</span>
                             <span class="dataSymbol">
                                 <span class="dataSymbolOne">＋</span>
                                 <span class="dataSymbolTwo">w</span>
@@ -28,7 +28,8 @@
                     </div>
                     <div class="dataItem">
                         <div class="dataText">
-                            <span class="dataNum">2,000</span>
+                            <!--<span class="dataNum">2,000</span>-->
+                            <span class="dataNum">{{dataThreeComputed}}</span>
                             <span class="dataSymbol">
                                 <span class="dataSymbolOne">＋</span>
                                 <span class="dataSymbolTwo">w</span>
@@ -38,7 +39,7 @@
                     </div>
                     <div class="dataItem">
                         <div class="dataText">
-                            <span class="dataNum">25</span>
+                            <span class="dataNum">{{dataFour}}</span>
                             <span class="dataSymbol">
                                 <span class="dataSymbolOne">＋</span>
                                 <span class="dataSymbolTwo">w</span>
@@ -52,3 +53,50 @@
         </div>
     </div>
 </template>
+<script>
+    export default {
+        data() {
+            return {
+                dataOne: 0,
+                dataTwo: 0,
+                dataThree: 0,
+                dataFour: 0
+            }
+        },
+        computed: {
+            dataThreeComputed() {
+                return this.dataThree.length>3?`${this.dataThree.slice(0,1)},${this.dataThree.slice(1,4)}`:this.dataThree
+            }
+        },
+        mounted() {
+            // build scene
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 10})
+                .setTween(this.makeTween(100, 'dataOne'))
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 50 })
+                .setTween(this.makeTween(230, 'dataTwo'))
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 100 })
+                .setTween(this.makeTween(2000, 'dataThree'))
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 100 })
+                .setTween(this.makeTween(50, 'dataFour'))
+                .addTo(controller);
+        },
+        methods: {
+            makeTween(num, target) {
+                let self = this
+                let numObject = {
+                    x: 0
+                }
+                return new TweenMax(numObject, 1, {
+                    x:num, 
+                    onUpdateParams: [numObject, "param"],
+                    onUpdate(params){
+                        self[target] = params.x.toFixed(0)
+                    }
+                })
+            }
+        }
+    }
+</script>

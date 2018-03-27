@@ -1,5 +1,5 @@
 <template>
-    <div class="bangker-productPlan">
+    <div class="bangker-productPlan" id="productPlan">
         <div class="productPlanContent">
             <h3>产品规划</h3>
             <div class="timeAxisIcon">
@@ -7,11 +7,11 @@
             </div>
             <div class="timeAxis">
                 <div class="timeAxis-left">
-                    <div class="item">
-                        <div class="itemContent">
+                    <div class="item" >
+                        <div class="itemContent" id="timeItem1">
                             <div class="itemContentOne">
                                 <div class="itemContentOne-left">
-                                    <p class="num">2018</p>
+                                    <p class="num">{{dataOne}}</p>
                                     <p class="text">第一阶段</p>
                                 </div>
                                 <div class="itemContentOne-right">
@@ -58,10 +58,10 @@
                         </div>
                     </div>
                     <div class="item">
-                        <div class="itemContent">
+                        <div class="itemContent" id="timeItem2">
                             <div class="itemContentOne">
                                 <div class="itemContentOne-left">
-                                    <p class="num">2020</p>
+                                    <p class="num">{{dataTwo}}</p>
                                     <p class="text">第二阶段</p>
                                 </div>
                                 <div class="itemContentOne-right">
@@ -118,10 +118,10 @@
                 </div>
                 <div class="timeAxis-right">
                     <div class="item" style="margin-top: 280px;">
-                        <div class="itemContent">
+                        <div class="itemContent" id="timeItem3">
                             <div class="itemContentOne">
                                 <div class="itemContentOne-left">
-                                    <p class="num">2019</p>
+                                    <p class="num">{{dataThree}}</p>
                                     <p class="text">第二阶段</p>
                                 </div>
                                 <div class="itemContentOne-right">
@@ -183,3 +183,72 @@
         </div>
     </div>
 </template>
+<script>
+    export default {
+         data() {
+            return {
+                dataOne: 0,
+                dataTwo: 0,
+                dataThree: 0
+            }
+        },
+        computed: {
+            dataThreeComputed() {
+                return this.dataThree.length>3?`${this.dataThree.slice(0,1)},${this.dataThree.slice(1,4)}`:this.dataThree
+            }
+        },
+        mounted() {
+
+            let tweenTimeItem1 = TweenMax.to('#timeItem1',1, {
+                opacity: 1,
+                ease: Back.easeOut
+            })
+            let tweenTimeItem2 = TweenMax.to('#timeItem2',1, {
+                opacity: 1,
+                ease: Back.easeOut
+            })
+            let tweenTimeItem3 = TweenMax.to('#timeItem3',1, {
+                opacity: 1,
+                ease: Back.easeOut
+            })
+            // build scene
+            new ScrollMagic.Scene({ triggerElement: "#timeItem1", duration: 400, offset: -200})
+                .setTween(tweenTimeItem1)
+                .addTo(controller);
+             // build scene
+            new ScrollMagic.Scene({ triggerElement: "#timeItem2", duration: 400, offset: -200})
+                .setTween(tweenTimeItem2)
+                .addTo(controller);
+             // build scene
+            new ScrollMagic.Scene({ triggerElement: "#timeItem3", duration: 400, offset: -200})
+                .setTween(tweenTimeItem3)
+                .addTo(controller);
+
+
+            new ScrollMagic.Scene({ triggerElement: "#timeItem1"})
+                .setTween(this.makeTween(2018, 'dataOne'))
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#timeItem2"})
+                .setTween(this.makeTween(2019, 'dataTwo'))
+                .addTo(controller);
+            new ScrollMagic.Scene({ triggerElement: "#timeItem3" })
+                .setTween(this.makeTween(2020, 'dataThree'))
+                .addTo(controller);
+        },
+        methods: {
+            makeTween(num, target) {
+                let self = this
+                let numObject = {
+                    x: 0
+                }
+                return new TweenMax(numObject, 1, {
+                    x:num, 
+                    onUpdateParams: [numObject, "param"],
+                    onUpdate(params){
+                        self[target] = params.x.toFixed(0)
+                    }
+                })
+            }
+        }
+    }
+</script>
