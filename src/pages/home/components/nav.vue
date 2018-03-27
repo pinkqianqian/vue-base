@@ -13,10 +13,10 @@
                     <span><a href="JavaScript:;">联系我们</a></span>
                 </div>
                 <div class="language">
-                    <div @click="languageIsShow = !languageIsShow">
+                    <div @click="showLanguage">
                         <p>简体中文</p>
                     </div>
-                    <ul class="language-item disN { languageIsShow ? 'disB' : 'disN' }">
+                    <ul class="language-item">
                         <li>简体中文</li>
                         <li>English</li>
                         <li>日本语</li>
@@ -33,6 +33,12 @@
         data() {
             return {
                 languageIsShow: false
+            }
+        },
+        methods: {
+            showLanguage(){
+                this.languageIsShow = !this.languageIsShow
+                console.log(this.languageIsShow, 'languageIsShow')
             }
         },
         mounted() {

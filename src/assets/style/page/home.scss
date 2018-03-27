@@ -61,15 +61,17 @@
                     }
                 }
                 .language {
+                    position: relative;
                     flex: 1;
                     max-width: 127px;
                     height: 40px;
                     margin-left: 20px;
                     padding: 0 15px 0 27px;
                     font-size: 16px;
-                    border-radius: 3px;
-                    background: #fff;
                     cursor: pointer;
+                    background: #fff;
+                    border-top-left-radius: 3px;
+                    border-top-right-radius: 3px;
                     p {
                         line-height: 40px;
                         color: #000;
@@ -77,12 +79,21 @@
                         background-size: 15px 10px;
                     }
                     ul.language-item {
-                        // display: none;
+                        position: absolute;
+                        top: 40px;
+                        left: 0;
+                        width: 100%;
+                        // padding: 10px 0 0 0;
                         background: #fff;
+                        border-bottom-left-radius: 3px;
+                        border-bottom-right-radius: 3px;
                         list-style: none;
-                        margin: 10px 0 0 5px;
+                        text-align: center;
                         li {
-                            line-height: 30px;
+                            // line-height: 30px;
+                            font-size: 16px;
+                            font-family: 'PingFang SC';
+                            margin: 0 0 15px 0;
                         }
                     }
                 }
