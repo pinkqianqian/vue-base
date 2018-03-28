@@ -22,7 +22,7 @@
         flex-direction: row;
         justify-content: center;
         position: fixed;
-        z-index: 2;
+        z-index: 3;
         // top: 0;
         // left: 0;
         // transition: all .5 ease;
@@ -72,10 +72,7 @@
                     font-size: 16px;
                     cursor: pointer;
                     background: #f5f6f9;
-
                     border-radius: 3px;
-                    // border-top-left-radius: 3px;
-                    // border-top-right-radius: 3px;
                     p {
                         line-height: 40px;
                         color: #000;
@@ -89,13 +86,11 @@
                         width: 100%;
                         padding-top: 8px;
                         background: #f5f6f9;
-
                         border-bottom-left-radius: 3px;
                         border-bottom-right-radius: 3px;
                         list-style: none;
                         text-align: center;
                         li {
-                            // line-height: 30px;
                             font-size: 16px;
                             font-family: 'PingFang SC';
                             margin: 0 0 15px 0;
@@ -133,16 +128,32 @@
     .bangker-bannerContent {
         width: 100%;
         min-width: 1000px;
-        height: 639px;
+        height: 554px;
+        // height: 639px;
         display: flex;
         display: -webkit-flex;
         flex-direction: row;
         justify-content: center;
         padding-top: 86px;
-        background: #8427fa url('Assets/image/home/banner.png') no-repeat bottom;
-        background-size: cover;
-        background-origin: content-box;
-        div {
+        background: #06163e;
+        position: relative;
+        // background: #8427fa url('Assets/image/home/banner.png') no-repeat bottom;
+        // background-size: cover;
+        // background-origin: content-box;
+        .bannerContent-video {
+            position: absolute;
+            right: 0;
+            top: 86px;
+            bottom: 0;
+            video {
+                height: 100%;
+                transform: none;
+                object-fit: cover;
+            }
+        }
+
+        .bannerContent-text {
+            z-index: 1;
             width: 1000px;
             padding-top: 80px;
             p {
@@ -175,7 +186,6 @@
                     padding-left: 30px;
                 }
             }
-
         }
     }
     .bangker-service {
