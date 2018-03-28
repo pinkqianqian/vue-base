@@ -79,7 +79,7 @@
         },
         methods: {
             makeTween(target, height) {
-                return TweenMax.to(target, height/24, {
+                return TweenMax.to(target, height > 50 ? 1.5 : height/48, {
                     height: `${height}px`,
                     // ease: 'easeOutBounce'
                     ease: 'easeIn'

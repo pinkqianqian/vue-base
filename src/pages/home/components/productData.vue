@@ -70,16 +70,16 @@
         },
         mounted() {
             // build scene
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 10})
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50})
                 .setTween(this.makeTween(100, 'dataOne'))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 100 })
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50 })
                 .setTween(this.makeTween(230, 'dataTwo'))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 200 })
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50 })
                 .setTween(this.makeTween(2000, 'dataThree'))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: 300 })
+            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50 })
                 .setTween(this.makeTween(50, 'dataFour'))
                 .addTo(controller);
         },
