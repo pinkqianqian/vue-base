@@ -1,7 +1,7 @@
 <template>
 <!--<div>-->
         <!--<div id="test" style="width: 100%;height:100px;background:red;">test</div>-->
-    <div class="bangker-nav">
+    <div class="bangker-nav bangker-nav-action">
         <div class="navContent">
             <div class="logo">
                 <div></div>
@@ -41,7 +41,6 @@
         methods: {
             showLanguage(){
                 this.languageIsShow = !this.languageIsShow
-                console.log(this.languageIsShow, 'languageIsShow')
             }
         },
         mounted() {
