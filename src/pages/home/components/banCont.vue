@@ -1,11 +1,28 @@
 <template>
     <div class="bangker-bannerContent">
-        <div class="bannerContent-video">
-            <video muted="muted" preload="auto" loop="loop" ref="video">
+<vue-particles
+        color="#dedede"
+        :particleOpacity="0.7"
+        :particlesNumber="80"
+        shapeType="circle"
+        :particleSize="4"
+        linesColor="#dedede"
+        :linesWidth="1"
+        :lineLinked="true"
+        :lineOpacity="0.4"
+        :linesDistance="150"
+        :moveSpeed="3"
+        :hoverEffect="true"
+        hoverMode="grab"
+        :clickEffect="true"
+        clickMode="push"
+      >
+      </vue-particles>
+        <!--<div class="bannerContent-video" style="width: 100%;overflow:hidden">
+            <video muted="muted" width="100%" preload="auto" loop="loop" ref="video">
                 <source src="/static/video/home/23827870.mp4" type="video/mp4">
-                <!-- <source src="https://ccm.ddcdn.com/cms/site/branding/videos/tahiti/video.mp4" type="video/mp4"> -->
             </video>
-        </div>
+        </div>-->
         <div class="bannerContent-text">
             <p class="p1">Bangker Travel</p>
             <p class="p2">在线旅行革命性创新</p>
@@ -19,9 +36,9 @@
 <script>
     export default {
         mounted() {
-            this.$refs.video.oncanplay = ()=>{
-                this.$refs.video.play()
-            }
+            // this.$refs.video.oncanplay = ()=>{
+            //     this.$refs.video.play()
+            // }
         }
     }
 </script>

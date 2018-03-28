@@ -11,15 +11,16 @@ import router from './router'
 import iView from 'iview'
 import 'iview/dist/styles/iview.css'; // 使用 CSS
 import injector from 'Utils/injector' //插件
-
 // import 'Components'// 全局组件注册
 import 'Config/ajax'
 import 'Directives' // 指令
+import VueParticles from 'vue-particles'
 
 import { DEBUG } from 'Config/index'
 Vue.config.productionTip = false
 
-Vue.use(injector) //注册业务所需
+Vue.use(VueParticles)
+Vue.use(injector) //注册业务所需``
 Vue.use(iView) //组件库
 
 /* eslint-disable no-new */

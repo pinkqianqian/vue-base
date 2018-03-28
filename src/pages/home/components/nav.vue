@@ -46,13 +46,13 @@
         mounted() {
             let $nav = this.$refs
 
-            let scene = new ScrollMagic.Scene({ triggerElement: '#service', duration: 725, offset: -200})
-                .setTween('#nav', { backgroundColor: '#8527fa' })
-                .addTo(controller)
+            // let scene = new ScrollMagic.Scene({ triggerElement: '#service', duration: 725, offset: -200})
+            //     .setTween('#nav', { backgroundColor: '#8527fa' })
+            //     .addTo(controller)
 
-                new ScrollMagic.Scene({ triggerElement: '#productData', duration: 30, offset: -200})
-                .setTween('#nav', { boxShadow: "0 1px 5px black" })
-                .addTo(controller)
+            //     new ScrollMagic.Scene({ triggerElement: '#productData', duration: 30, offset: -200})
+            //     .setTween('#nav', { boxShadow: "0 1px 5px black" })
+            //     .addTo(controller)
         }
     }
 </script>
