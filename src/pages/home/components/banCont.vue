@@ -1,19 +1,20 @@
 <template>
     <div class="bangker-bannerContent">
 <vue-particles
-        color="#dedede"
-        :particleOpacity="0.7"
-        :particlesNumber="80"
+        class="particles-js"
+        color="#FFFFFF"
+        :particleOpacity="0.4"
+        :particlesNumber="120"
         shapeType="circle"
-        :particleSize="4"
-        linesColor="#dedede"
+        :particleSize="2"
+        linesColor="#8527fa"
         :linesWidth="1"
         :lineLinked="true"
         :lineOpacity="0.4"
         :linesDistance="150"
         :moveSpeed="3"
         :hoverEffect="true"
-        hoverMode="grab"
+        hoverMode="Grab"
         :clickEffect="true"
         clickMode="push"
       >
@@ -42,3 +43,16 @@
         }
     }
 </script>
+<style>
+.particles-js {
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.bangker-bannerContent{
+    text-align:center;
+}
+</style>
