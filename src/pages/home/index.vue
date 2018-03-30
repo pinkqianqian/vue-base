@@ -6,10 +6,10 @@
         <!-- </div> -->
         <service id="service"></service>
         <product-data></product-data>
-        <team></team>
-        <partner></partner>
-        <product-plan></product-plan>
-        <contact-us></contact-us>
+        <team id="team"></team>
+        <partner id="partner"></partner>
+        <product-plan id="plan"></product-plan>
+        <contact-us id="contact"></contact-us>
     </div>
 </template>
 <script>

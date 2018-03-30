@@ -32,7 +32,7 @@
                             <span class="dataNum">{{dataThreeComputed}}</span>
                             <span class="dataSymbol">
                                 <span class="dataSymbolOne">＋</span>
-                                <span class="dataSymbolTwo">w</span>
+                                <span class="dataSymbolTwo"></span>
                             </span>
                         </div>
                         <p class="dataTitle">全球旅行达人</p>
@@ -54,46 +54,67 @@
     </div>
 </template>
 <script>
+
+
     export default {
+        
+
         data() {
             return {
                 dataOne: 0,
                 dataTwo: 0,
                 dataThree: 0,
-                dataFour: 0
+                dataFour: 0,
+                stopAnimate: false
             }
         },
         computed: {
+
+
             dataThreeComputed() {
                 return this.dataThree.length>3?`${this.dataThree.slice(0,1)},${this.dataThree.slice(1,4)}`:this.dataThree
             }
         },
         mounted() {
-            // build scene
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50})
+            let quene = []
+
+            let scene1 = new ScrollMagic.Scene({ triggerElement: "#productData", offset:50})
                 .setTween(this.makeTween(100, 'dataOne'))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50 })
+            let scene2 = new ScrollMagic.Scene({ triggerElement: "#productData", offset: 50})
                 .setTween(this.makeTween(230, 'dataTwo'))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50 })
+            let scene3 = new ScrollMagic.Scene({ triggerElement: "#productData", offset: 50})
                 .setTween(this.makeTween(2000, 'dataThree'))
                 .addTo(controller);
-            new ScrollMagic.Scene({ triggerElement: "#productData", offset: -50 })
+            let scene4 = new ScrollMagic.Scene({ triggerElement: "#productData", offset: 50})
                 .setTween(this.makeTween(50, 'dataFour'))
                 .addTo(controller);
+
+
+            scene1.on("progress",  ({progress}) => {
+                if(this.stopAnimate) return
+                if(progress === 1) {
+                    this.stopAnimate = true
+                    scene1.remove()
+                    scene2.remove()
+                    scene3.remove()
+                    scene4.remove()
+                }
+            });
+
         },
         methods: {
             makeTween(num, target) {
                 let self = this
                 let numObject = {
-                    x: 0
+                    x: 10
                 }
                 return new TweenMax(numObject, .3, {
                     x:num,
                     onUpdateParams: [numObject, "param"],
                     onUpdate(params){
-                        self[target] = params.x.toFixed(0)
+                        self[target] = params.x.toFixed(0);
                     }
                 })
             }

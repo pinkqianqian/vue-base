@@ -19,6 +19,10 @@ import VueParticles from 'vue-particles'
 import { DEBUG } from 'Config/index'
 Vue.config.productionTip = false
 
+import smoothscroll from 'smoothscroll-polyfill';
+
+// kick off the polyfill!
+smoothscroll.polyfill();
 Vue.use(VueParticles)
 Vue.use(injector) //注册业务所需``
 Vue.use(iView) //组件库

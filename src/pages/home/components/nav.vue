@@ -1,6 +1,4 @@
 <template>
-<!--<div>-->
-        <!--<div id="test" style="width: 100%;height:100px;background:red;">test</div>-->
     <div class="bangker-nav bangker-nav-action">
         <div class="navContent">
             <div class="logo">
@@ -8,11 +6,11 @@
             </div>
             <div class="navRight">
                 <div class="item">
-                    <span class="current"><a href="JavaScript:;">产品与服务</a></span>
-                    <span><a href="JavaScript:;">团队介绍</a></span>
-                    <span><a href="JavaScript:;">合作伙伴</a></span>
-                    <span><a href="JavaScript:;">规划</a></span>
-                    <span><a href="JavaScript:;">联系我们</a></span>
+                    <span :class="{'current': anchor=== 'product'}"><a href="JavaScript:;" @click="jump('product')">产品与服务</a></span>
+                    <span :class="{'current': anchor=== 'intro'}" ><a href="JavaScript:;" @click="jump('intro')">团队介绍</a></span>
+                    <span :class="{'current': anchor=== 'friend'}"><a href="JavaScript:;" @click="jump('friend')">合作伙伴</a></span>
+                    <span :class="{'current': anchor=== 'plan'}"><a href="JavaScript:;" @click="jump('plan')">规划</a></span>
+                    <span :class="{'current': anchor=== 'contact'}"><a href="JavaScript:;" @click="jump('contact')">联系我们</a></span>
                 </div>
                 <div class="language">
                     <div @click="showLanguage">
@@ -28,31 +26,35 @@
             </div>
         </div>
     </div>
-    <!--</div>-->
 </template>
 
 <script>
-    export default {
-        data() {
-            return {
-                languageIsShow: false
-            }
-        },
-        methods: {
-            showLanguage(){
-                this.languageIsShow = !this.languageIsShow
-            }
-        },
-        mounted() {
-            let $nav = this.$refs
-
-            // let scene = new ScrollMagic.Scene({ triggerElement: '#service', duration: 725, offset: -200})
-            //     .setTween('#nav', { backgroundColor: '#8527fa' })
-            //     .addTo(controller)
-
-            //     new ScrollMagic.Scene({ triggerElement: '#productData', duration: 30, offset: -200})
-            //     .setTween('#nav', { boxShadow: "0 1px 5px black" })
-            //     .addTo(controller)
+const jumpMap = {
+    product: '#content',
+    intro: '#team',
+    friend: '#partner',
+    plan: '#plan',
+    contact: '#contact'
+}
+export default {
+    data() {
+        return {
+            languageIsShow: false,
+            anchor: 'product'
         }
+    },
+    methods: {
+        showLanguage(){
+            this.languageIsShow = !this.languageIsShow
+        },
+        jump(anchor) {
+            if(this.anchor === anchor) return
+            this.anchor = anchor
+            document.querySelector(jumpMap[anchor]).scrollIntoView({ behavior: 'smooth' });
+        }
+    },
+    mounted() {
+        let $nav = this.$refs
     }
+}
 </script>

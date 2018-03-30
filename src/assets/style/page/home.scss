@@ -106,8 +106,8 @@
     }
     .bangker-nav-action {
         background: #fff;
-        box-shadow: 0 1px 5px #888;
-        z-index: 1;
+        box-shadow: 0 1px 5px #ccc;
+        z-index: 99;
         .navContent {
             .logo div {
                 background: url('Assets/image/home/logo_02.png') no-repeat;
@@ -129,13 +129,14 @@
         width: 100%;
         min-width: 1000px;
         height: 554px;
+        z-index: 1;
         // height: 639px;
         display: flex;
         display: -webkit-flex;
         flex-direction: row;
         justify-content: center;
         padding-top: 86px;
-        background: #06163e;
+        background: #00050f;
         position: relative;
         // background: #8427fa url('Assets/image/home/banner.png') no-repeat bottom;
         // background-size: cover;
@@ -151,7 +152,22 @@
                 object-fit: cover;
             }
         }
-
+        .navContent {
+            .logo div {
+                background: url('Assets/image/home/logo_02.png') no-repeat;
+            }
+            .navRight {
+                .item span a {
+                    color: #333;
+                }
+                .item span.current a {
+                    color: #8527fa;
+                }
+                .language {
+                    background: #f5f6f9;
+                }
+            }
+        }
         .bannerContent-text {
             z-index: 1;
             width: 1000px;
@@ -171,22 +187,19 @@
                 font-size: 20px;
             }
             button {
-                width: 174px;
-                height: 56px;
-                background: #fff;
-                border-radius: 3px;
+                width: 198px;
+                height: 60px;
                 margin-top: 30px;
-                padding: 0 23px;
-                cursor: pointer;
+                border-width:0px;
+                background: url(Assets/image/home/button.png) no-repeat;
                 p {
-                    background: url(Assets/image/home/icon_06.png) no-repeat;
-                    background-size: 25px 25px;
                     color: #000;
                     font-size: 18px;
                     padding-left: 30px;
                 }
             }
         }
+
     }
     .bangker-service {
         width: 100%;
@@ -490,10 +503,6 @@
                 .item {
                     flex: 1;
                     font-size: 18px;
-                    img:hover {
-                        transform: scale(1.05);
-                        transform: rotate(360deg);
-                    }
                     img {
                         transition: all .2s ease-in;
                     }

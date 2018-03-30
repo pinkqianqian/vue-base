@@ -62,7 +62,7 @@
                             <div class="itemContentOne">
                                 <div class="itemContentOne-left">
                                     <p class="num">{{dataTwo}}</p>
-                                    <p class="text">第二阶段</p>
+                                    <p class="text">第三阶段</p>
                                 </div>
                                 <div class="itemContentOne-right">
                                     <h5>大爆发</h5>
@@ -134,7 +134,7 @@
                                     <p class="text padTop10">Q1</p>
                                 </div>
                                 <div class="itemContentOne-right">
-                                    <p class="gray">建立去中心化的投诉裁决体系；完成客户端2.1；完成Web/H5</p>
+                                    <p >建立去中心化的投诉裁决体系；完成客户端2.1；完成Web/H5</p>
                                 </div>
                             </div>
                             <div class="itemContentOne">
@@ -142,7 +142,7 @@
                                     <p class="text padTop10">Q2</p>
                                 </div>
                                 <div class="itemContentOne-right">
-                                    <p class="gray">完成全球化第一站日文站；精细化运营；完成客户端2.2</p>
+                                    <p >完成全球化第一站日文站；精细化运营；完成客户端2.2</p>
                                 </div>
                             </div>
                             <div class="itemContentOne">
@@ -183,13 +183,18 @@
         </div>
     </div>
 </template>
+<style>
+p {
+    color:#333;
+}
+</style>
 <script>
     export default {
          data() {
             return {
-                dataOne: 0,
-                dataTwo: 0,
-                dataThree: 0
+                dataOne: 2018,
+                dataTwo: 2020,
+                dataThree: 2019
             }
         },
         computed: {
@@ -211,35 +216,34 @@
                 opacity: 1,
                 ease: Back.easeOut
             })
+
             // build scene
-            new ScrollMagic.Scene({ triggerElement: "#timeItem1", duration: 400, offset: -200})
+            new ScrollMagic.Scene({ triggerElement: "#timeItem1", duration: 400, offset: -200, reverse:false})
                 .setTween(tweenTimeItem1)
                 .addTo(controller);
              // build scene
-            new ScrollMagic.Scene({ triggerElement: "#timeItem2", duration: 400, offset: -200})
+            new ScrollMagic.Scene({ triggerElement: "#timeItem2", duration: 400, offset: -200, reverse:false})
                 .setTween(tweenTimeItem2)
                 .addTo(controller);
              // build scene
-            new ScrollMagic.Scene({ triggerElement: "#timeItem3", duration: 400, offset: -200})
+            new ScrollMagic.Scene({ triggerElement: "#timeItem3", duration: 400, offset: -200,reverse:false})
                 .setTween(tweenTimeItem3)
                 .addTo(controller);
-
-
             new ScrollMagic.Scene({ triggerElement: "#timeItem1"})
                 .setTween(this.makeTween(2018, 'dataOne'))
                 .addTo(controller);
             new ScrollMagic.Scene({ triggerElement: "#timeItem2"})
-                .setTween(this.makeTween(2019, 'dataTwo'))
+                .setTween(this.makeTween(2020, 'dataTwo'))
                 .addTo(controller);
             new ScrollMagic.Scene({ triggerElement: "#timeItem3" })
-                .setTween(this.makeTween(2020, 'dataThree'))
+                .setTween(this.makeTween(2019, 'dataThree'))
                 .addTo(controller);
         },
         methods: {
             makeTween(num, target) {
                 let self = this
                 let numObject = {
-                    x: 0
+                    x: 1
                 }
                 return new TweenMax(numObject, 1, {
                     x:num,
